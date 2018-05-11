@@ -8,18 +8,18 @@
 #include <Joystick.h>
 
 #define ENABLE_PULLUPS
-#define NUMROTARIES 4
-#define NUMBUTTONS 24
+#define NUMROTARIES 3
+#define NUMBUTTONS 15
 #define NUMROWS 5
-#define NUMCOLS 5
+#define NUMCOLS 3
 
 
 byte buttons[NUMROWS][NUMCOLS] = {
-  {0,1,2,3,4},
-  {5,6,7,8,9},
-  {10,11,12,13,14},
-  {15,16,17,18,19},
-  {20,21,22,23},
+  {0,1,2},
+  {5,6,7},
+  {10,11,12},
+  {15,16,17},
+  {20,21,22},
 };
 
 struct rotariesdef {
@@ -32,9 +32,7 @@ struct rotariesdef {
 
 rotariesdef rotaries[NUMROTARIES] {
   {0,1,24,25,0},
-  {2,3,26,27,0},
-  {4,5,28,29,0},
-  {6,7,30,31,0},
+  {2,3,26,27,0}
 };
 
 #define DIR_CCW 0x10
@@ -88,7 +86,7 @@ const unsigned char ttable[7][4] = {
 #endif
 
 byte rowPins[NUMROWS] = {21,20,19,18,15}; 
-byte colPins[NUMCOLS] = {14,16,10,9,8}; 
+byte colPins[NUMCOLS] = {14,16,9}; 
 
 Keypad buttbx = Keypad( makeKeymap(buttons), rowPins, colPins, NUMROWS, NUMCOLS); 
 
